@@ -36,7 +36,7 @@
   section > .wrap > p{max-width:640px;color:#333}
 
   /* setup grid */
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:36px}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:36px}
   .card{background:#fff;border:1px solid var(--line);border-radius:4px;padding:24px}
   .card h3{font-size:20px;margin-bottom:6px}
   .card p{font-size:15px;color:var(--muted)}
@@ -69,7 +69,8 @@
   .how{margin-top:40px;font-size:15px;color:#333;max-width:640px}
 
   /* terms */
-  .terms{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:4px 40px;margin-top:32px}
+  .terms{display:grid;grid-template-columns:repeat(2,1fr);gap:4px 40px;margin-top:32px}
+  .terms div:last-child:nth-child(odd){grid-column:1/-1}
   .terms div{padding:16px 0;border-top:1px solid var(--line)}
   .terms h3{font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
   .terms p{font-size:16px}
@@ -96,6 +97,7 @@
     .row{grid-template-columns:48px 1fr;gap:14px}
     .row .qty{font-size:30px}
     .perk{padding:28px}
+    .grid,.terms{grid-template-columns:1fr}
   }
 </style>
 </head>
