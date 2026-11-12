@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Podcast Production | Angela Gordon x Mittzflix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#141414; --paper:#faf8f4; --muted:#6b6560; --line:#e4ded5;
+    --sand:#efe8dc; --clay:#b5653d; --sage:#7d8b6a;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+  h1,h2,h3{font-family:Fraunces,Georgia,serif;font-weight:500;line-height:1.15;letter-spacing:-.01em}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--clay)}
+
+  /* hero */
+  header{background:var(--ink);color:var(--paper);padding:28px 0 88px}
+  .topbar{display:flex;justify-content:space-between;align-items:center;font-size:13px;letter-spacing:.12em;text-transform:uppercase;opacity:.75;margin-bottom:72px}
+  .topbar span:last-child{font-weight:600}
+  header h1{font-size:clamp(40px,7vw,68px);font-weight:300;margin:16px 0 20px}
+  header h1 em{font-style:italic;color:#e6b48f}
+  header p.lede{font-size:19px;max-width:560px;opacity:.85}
+  .hero-stats{display:flex;gap:40px;flex-wrap:wrap;margin-top:48px;padding-top:28px;border-top:1px solid rgba(255,255,255,.15)}
+  .hero-stats div{font-size:13px;letter-spacing:.06em;text-transform:uppercase;opacity:.7}
+  .hero-stats strong{display:block;font-family:Fraunces,serif;font-size:36px;font-weight:300;letter-spacing:0;text-transform:none;opacity:1;color:var(--paper)}
+
+  section{padding:80px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(30px,4.5vw,42px);margin:10px 0 18px}
+  section > .wrap > p{max-width:640px;color:#333}
+
+  /* setup grid */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:36px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:4px;padding:24px}
+  .card h3{font-size:20px;margin-bottom:6px}
+  .card p{font-size:15px;color:var(--muted)}
+  .card .num{font-family:Fraunces,serif;font-size:14px;color:var(--clay);margin-bottom:10px;display:block}
+
+  /* deliverables */
+  .deliv{margin-top:36px;border-top:1px solid var(--ink)}
+  .row{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:22px 0;border-bottom:1px solid var(--line);align-items:start}
+  .row .qty{font-family:Fraunces,serif;font-size:38px;font-weight:300;line-height:1;color:var(--ink)}
+  .row h3{font-size:20px;margin-bottom:4px}
+  .row p{font-size:15px;color:var(--muted)}
+
+  /* pricing */
+  .pricing{background:var(--sand)}
+  .price-main{background:var(--ink);color:var(--paper);border-radius:4px;padding:40px;margin-top:36px;display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end}
+  .price-main h3{font-size:26px;font-weight:400}
+  .price-main p{opacity:.75;font-size:15px;margin-top:6px}
+  .price-main .amt{font-family:Fraunces,serif;font-size:56px;font-weight:300;line-height:1}
+  .price-main .amt small{font-size:18px;opacity:.7}
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:16px}
+  .tier{background:#fff;border-radius:4px;padding:24px;border:1px solid var(--line)}
+  .tier.feature{border:1.5px solid var(--clay)}
+  .tier .tag{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--clay)}
+  .tier h3{font-size:19px;margin:6px 0 4px}
+  .tier .amt{font-family:Fraunces,serif;font-size:32px;font-weight:300}
+  .tier p{font-size:14px;color:var(--muted)}
+  .addons{margin-top:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+  .addons div{font-size:15px;padding:14px 0;border-top:1px solid #d8cfc1;display:flex;justify-content:space-between;gap:12px}
+  .addons strong{font-weight:600;white-space:nowrap}
+  .how{margin-top:40px;font-size:15px;color:#333;max-width:640px}
+
+  /* terms */
+  .terms{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:4px 40px;margin-top:32px}
+  .terms div{padding:16px 0;border-top:1px solid var(--line)}
+  .terms h3{font-family:Inter,sans-serif;font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:4px}
+  .terms p{font-size:16px}
+
+  /* perk + next */
+  .perk{background:var(--ink);color:var(--paper);border-radius:4px;padding:36px;margin-top:8px}
+  .perk h3{font-size:26px;font-weight:400;margin-bottom:8px}
+  .perk p{opacity:.8;max-width:600px}
+  ol.steps{list-style:none;counter-reset:s;margin-top:40px}
+  ol.steps li{counter-increment:s;display:grid;grid-template-columns:56px 1fr;padding:18px 0;border-top:1px solid var(--line);font-size:17px}
+  ol.steps li::before{content:"0" counter(s);font-family:Fraunces,serif;color:var(--clay);font-size:20px}
+
+  footer{padding:56px 0 72px;text-align:center;font-size:13px;color:var(--muted);letter-spacing:.06em}
+  footer strong{display:block;font-family:Fraunces,serif;font-size:22px;letter-spacing:0;color:var(--ink);font-weight:500;margin-bottom:6px}
+  footer a{color:var(--ink)}
+
+  @media (max-width:600px){
+    body{font-size:16px}
+    header{padding-bottom:64px}
+    .topbar{margin-bottom:48px}
+    section{padding:60px 0}
+    .price-main{grid-template-columns:1fr;padding:28px}
+    .price-main .amt{font-size:46px}
+    .row{grid-template-columns:48px 1fr;gap:14px}
+    .row .qty{font-size:30px}
+    .perk{padding:28px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="topbar"><span>Proposal · November 2026</span><span>Mittzflix</span></div>
+    <span class="eyebrow">Podcast Production for</span>
+    <h1>Angela Gordon's <em>entrepreneur</em> podcast</h1>
+    <p class="lede">One recording day a month, a full month of content. Long-form episodes, short clips for every guest, and a share kit that puts each episode in front of their audience too.</p>
+    <div class="hero-stats">
+      <div><strong>1</strong>recording day / mo</div>
+      <div><strong>3</strong>full episodes</div>
+      <div><strong>9</strong>short-form clips</div>
+      <div><strong>0</strong>gear for you to touch</div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">The Recording Day</span>
+    <h2>You host. I handle everything else.</h2>
+    <p>One weekday a month in your suite, a 4-hour window for up to three guests, host plus one guest per episode. I arrive before your first guest, set up, run the session and break down after. You never touch gear.</p>
+    <div class="grid">
+      <div class="card"><span class="num">01</span><h3>Three cameras</h3><p>A wide shot plus a close angle on you and on your guest, the look of a real studio show.</p></div>
+      <div class="card"><span class="num">02</span><h3>Broadcast audio</h3><p>A dedicated mic for each of you, recorded on separate tracks, with backup mics running.</p></div>
+      <div class="card"><span class="num">03</span><h3>Studio lighting</h3><p>Soft lighting set to your space, locked in so every episode looks the same month to month.</p></div>
+      <div class="card"><span class="num">04</span><h3>Guest photos</h3><p>A quick headshot as each guest arrives, plus in-conversation stills from the cameras.</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">What You Get Each Month</span>
+    <h2>Everything ready to publish.</h2>
+    <div class="deliv">
+      <div class="row"><div class="qty">3</div><div><h3>Full episodes</h3><p>Multicam edit, mixed audio, color graded, branded intro and outro. Ready for YouTube.</p></div></div>
+      <div class="row"><div class="qty">3</div><div><h3>Podcast audio masters</h3><p>Files ready for your hosting platform to push to Spotify, Apple and the rest.</p></div></div>
+      <div class="row"><div class="qty">9</div><div><h3>Short-form clips</h3><p>Three per guest. Vertical, captioned and cut around the moments that stop the scroll, for Reels, TikTok and Shorts.</p></div></div>
+      <div class="row"><div class="qty">3</div><div><h3>Guest share kits</h3><p>Each guest gets their clips, three edited photos and a quote graphic, ready to post. Every episode reaches their sphere, not just yours.</p></div></div>
+      <div class="row"><div class="qty">3</div><div><h3>Publishing packs</h3><p>Episode title, show notes, chapter markers, YouTube description and thumbnail.</p></div></div>
+      <div class="row"><div class="qty">3</div><div><h3>Guest prep packs</h3><p>You line up each guest and their topics and questions. I package it into a clean one-page guest brief and a run of show for the day, plus an intake form to collect each guest's bio, headshot and handles.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="pricing">
+  <div class="wrap">
+    <span class="eyebrow">Investment</span>
+    <h2>Simple monthly pricing.</h2>
+    <div class="price-main">
+      <div><h3>Monthly Recording Day</h3><p>Three guests, everything above, every month.</p></div>
+      <div class="amt">$1,500<small>/mo</small></div>
+    </div>
+    <div class="tiers">
+      <div class="tier feature"><span class="tag">Launch Commitment</span><h3>January to June</h3><div class="amt">$1,350/mo</div><p>Same full package with six recording days booked upfront.</p></div>
+      <div class="tier"><span class="tag">Lighter Month</span><h3>Two guests</h3><div class="amt">$1,100</div><p>2 episodes, 6 clips, 2 share kits.</p></div>
+      <div class="tier"><span class="tag">One-Off</span><h3>Single episode</h3><div class="amt">$600</div><p>1 guest, 1 episode, 3 clips, share kit.</p></div>
+    </div>
+    <div class="addons">
+      <div><span>Extra short-form clip</span><strong>$75</strong></div>
+      <div><span>4th guest, same day</span><strong>$400</strong></div>
+      <div><span>Rush episodes (5 business days)</span><strong>$150</strong></div>
+    </div>
+    <p class="how"><strong>How it's built:</strong> the price covers three parts, the production day, post-production per episode, and short-form clips. The monthly package bundles them below what they'd cost on their own.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">The Details</span>
+    <h2>How we'll work together.</h2>
+    <div class="terms">
+      <div><h3>All 9 clips + share kits</h3><p>Within 5 business days of recording, so you have content to post first</p></div>
+      <div><h3>All 3 episodes + publishing packs</h3><p>Within 10 business days of recording</p></div>
+      <div><h3>Scheduling</h3><p>Dates set a quarter ahead, on a weekday, in a 4-hour window</p></div>
+      <div><h3>Payment</h3><p>Billed monthly on a day of the month that works for you</p></div>
+      <div><h3>Revisions</h3><p>One round of edits per episode included</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="border-bottom:0">
+  <div class="wrap">
+    <span class="eyebrow">Next Steps</span>
+    <h2>Ready when you are.</h2>
+    <ol class="steps">
+      <li>Confirm the package and start month</li>
+      <li>Pick the first three recording dates, January to March</li>
+      <li>Quick walkthrough of your suite to set lighting and camera positions</li>
+      <li>Optional test recording in December so the look is locked before launch</li>
+    </ol>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>Mittzflix</strong>
+    Marcus Synegal · <a href="https://instagram.com/mittz.flix">@mittz.flix</a>
+  </div>
+</footer>
+
+</body>
+</html>
